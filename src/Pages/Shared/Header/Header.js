@@ -16,7 +16,7 @@ const Header = () => {
 
   const handleLogOut = () => {
     logOut()
-    .than(() => {})
+    .then(() => {})
     .catch(error => console.error(error))
   }
 
@@ -42,7 +42,7 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-          <Nav.Link eventKey={2} >
+          <Link to='/profile' >
               {
                 user?.photoURL ?
                   <Image
@@ -52,8 +52,8 @@ const Header = () => {
                   :
                   <FaUserCircle className='fs-4'></FaUserCircle>
               }
-            </Nav.Link>
-            <Nav.Link className='fw-normal' href="#deets">
+            </Link>
+            <>
               {
                 user?.uid ?
                   <>
@@ -67,7 +67,7 @@ const Header = () => {
                     <Link to='/register'>Register</Link>
                   </>
               }
-            </Nav.Link>
+            </>
          
           </Nav>
           <div className='d-lg-none'>
